@@ -6,13 +6,21 @@
 #include "GameFramework/GameModeBase.h"
 #include "AnotherGoGameMode.generated.h"
 
-UCLASS(minimalapi)
+UCLASS()
 class AAnotherGoGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
 public:
 	AAnotherGoGameMode();
+
+	virtual void StartPlay() override;
+
+	UPROPERTY(EditAnywhere)
+		FString aString;
+
+	UFUNCTION(BlueprintCallable, Category = "Class Functions")
+		void AFunction();
 };
 
 
