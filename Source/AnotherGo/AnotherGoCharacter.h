@@ -14,6 +14,9 @@ class AAnotherGoCharacter : public ACharacter
 public:
 	AAnotherGoCharacter();
 
+private:
+	USkeletalMesh* skelMesh;
+	UAnimInstance* animation;
 
 };
 

@@ -13,6 +13,6 @@
 
 AAnotherGoCharacter::AAnotherGoCharacter()
 {
-
+	
 
 }
