@@ -21,6 +21,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Class Functions")
 		void AFunction();
+
+	UFUNCTION(BlueprintCallable, Category = "Class Functions")
+		void SecondFunction();
 };
 
 

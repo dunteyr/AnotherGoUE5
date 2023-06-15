@@ -30,3 +30,9 @@ void AAnotherGoGameMode::AFunction() {
 
 	GEngine->AddOnScreenDebugMessage(1, 5.0f, FColor::Yellow, aString);
 }
+
+void AAnotherGoGameMode::SecondFunction() {
+	check(GEngine != nullptr);
+
+	GEngine->AddOnScreenDebugMessage(1, 5.0f, FColor::Yellow, "Test for visual studio");
+}
