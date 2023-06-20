@@ -16,3 +16,41 @@ AAnotherGoCharacter::AAnotherGoCharacter()
 	
 
 }
+
+
+void AAnotherGoCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	
+	if (isTrackingRagdoll)
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, );
+	}
+}
+
+
+void AAnotherGoCharacter::trackRagdoll()
+{
+	check(GEngine != nullptr);
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, "Made it to trackRagdoll()");
+
+	check(mainCam != nullptr);
+
+	if (mainCam != nullptr) 
+	{
+		check(skelMesh != nullptr);
+
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, "Main cam ref working");
+
+		isTrackingRagdoll = true;
+		auto springArm = mainCam->GetAttachParent();
+		springArm->DetachFromComponent(FDetachmentTransformRules::KeepRelativeTransform);
+		springArm->AttachToComponent(skelMesh, FAttachmentTransformRules::KeepRelativeTransform, "HeadSocket");
+		springArm->SetRelativeLocation(springArm->GetRelativeLocation() + FVector(0.0, 4.0, 0.0));
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, "Main cam ref not working");
+	}
+}

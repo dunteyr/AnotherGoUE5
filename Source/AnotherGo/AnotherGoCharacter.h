@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Camera/CameraComponent.h"
 #include "GameFramework/Character.h"
 #include "AnotherGoCharacter.generated.h"
 
@@ -13,10 +14,21 @@ class AAnotherGoCharacter : public ACharacter
 
 public:
 	AAnotherGoCharacter();
+	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UCameraComponent* mainCam;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite)
+		class USkeletalMeshComponent* skelMesh;
+	UPROPERTY(BlueprintReadOnly)
+		bool isTrackingRagdoll{ false };
+
+	UFUNCTION(BlueprintCallable)
+		void trackRagdoll();
 
 
 private:
-	USkeletalMesh* skelMesh;
+	
 	UAnimInstance* animation;
 
 };
