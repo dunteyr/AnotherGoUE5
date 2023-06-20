@@ -11,7 +11,7 @@
 //////////////////////////////////////////////////////////////////////////
 // AAnotherGoCharacter
 
-AAnotherGoCharacter::AAnotherGoCharacter()
+AAnotherGoCharacter::AAnotherGoCharacter() : Super()
 {
 	
 
