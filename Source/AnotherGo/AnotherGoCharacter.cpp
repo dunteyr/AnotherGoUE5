@@ -13,7 +13,9 @@
 
 AAnotherGoCharacter::AAnotherGoCharacter()
 {
-	
+	//setting orientation here because it always resets itself otherwise.
+	auto characterMovement = AActor::FindComponentByClass<UCharacterMovementComponent>();
+	characterMovement->bOrientRotationToMovement = true;
 
 }
 
